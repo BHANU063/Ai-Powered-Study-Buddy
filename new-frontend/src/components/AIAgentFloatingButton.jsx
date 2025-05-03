@@ -18,15 +18,31 @@ export default function AIAgentFloatingButton() {
     }
   }, [messages, open, maximized]);
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
     setMessages([...messages, { from: "user", text: input }]);
+    const userMessage = input;
     setInput("");
-    // Placeholder for AI response (will be replaced with Gemini API)
-    setTimeout(() => {
-      setMessages(msgs => [...msgs, { from: "ai", text: "(AI response will appear here)" }]);
-    }, 800);
+    // Show loading indicator
+    setMessages(msgs => [...msgs, { from: "ai", text: "..." }]);
+    try {
+      const res = await fetch("http://localhost:5001/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
+      });
+      const data = await res.json();
+      setMessages(msgs => [
+        ...msgs.slice(0, -1),
+        { from: "ai", text: data.reply || "Sorry, I didn't get that." }
+      ]);
+    } catch (err) {
+      setMessages(msgs => [
+        ...msgs.slice(0, -1),
+        { from: "ai", text: "Sorry, something went wrong." }
+      ]);
+    }
   };
 
   return (

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studybuddy.controller.QuizController" spacing="20" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Flashcard Quiz" styleClass="quiz-title" />
+    
+    <VBox spacing="10" alignment="CENTER" prefWidth="600">
+        <Label fx:id="questionLabel" styleClass="question-text" wrapText="true" />
+        <TextArea fx:id="answerTextArea" promptText="Type your answer here..." prefRowCount="3" prefWidth="500" />
+        <Button fx:id="submitButton" text="Submit Answer" onAction="#handleSubmitAnswer" />
+    </VBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Label fx:id="scoreLabel" styleClass="score-text" />
+        <Label fx:id="progressLabel" styleClass="progress-text" />
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="nextButton" text="Next Question" onAction="#handleNextQuestion" />
+        <Button fx:id="finishButton" text="Finish Quiz" onAction="#handleFinishQuiz" />
+    </HBox>
+</VBox> 

@@ -1,0 +1,142 @@
+.root {
+    -fx-background-color: #1a1a1a;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.menu-bar {
+    -fx-background-color: #2d2d2d;
+    -fx-border-color: #404040;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-item {
+    -fx-padding: 5 10 5 10;
+}
+
+.menu-item:hover {
+    -fx-background-color: #404040;
+}
+
+.tab-pane {
+    -fx-background-color: #2d2d2d;
+    -fx-padding: 10;
+}
+
+.tab {
+    -fx-background-color: #404040;
+    -fx-padding: 5 10 5 10;
+}
+
+.tab:selected {
+    -fx-background-color: #2d2d2d;
+}
+
+.button {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 3;
+}
+
+.button:hover {
+    -fx-background-color: #357abd;
+}
+
+.button:disabled {
+    -fx-background-color: #666666;
+}
+
+.text-field {
+    -fx-background-color: #404040;
+    -fx-border-color: #666666;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+    -fx-text-fill: white;
+}
+
+.list-view {
+    -fx-background-color: #404040;
+    -fx-border-color: #666666;
+    -fx-border-radius: 3;
+}
+
+.label {
+    -fx-text-fill: #ffffff;
+}
+
+.status-label {
+    -fx-text-fill: #999999;
+    -fx-font-style: italic;
+}
+
+.buddy-name {
+    -fx-font-size: 16pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a90e2;
+}
+
+.timer-label {
+    -fx-font-size: 48pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a90e2;
+}
+
+.game-description {
+    -fx-font-size: 14pt;
+    -fx-text-fill: #999999;
+    -fx-alignment: center;
+}
+
+.dialog-pane {
+    -fx-background-color: #2d2d2d;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #357abd;
+}
+
+.status-bar {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: #999999;
+}
+
+.quiz-title {
+    -fx-font-size: 24pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a90e2;
+}
+
+.question-text {
+    -fx-font-size: 18pt;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 20;
+}
+
+.score-text {
+    -fx-font-size: 16pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a90e2;
+}
+
+.progress-text {
+    -fx-font-size: 14pt;
+    -fx-text-fill: #999999;
+}
+
+.text-area {
+    -fx-background-color: #404040;
+    -fx-border-color: #666666;
+    -fx-border-radius: 3;
+    -fx-padding: 10;
+    -fx-font-size: 14pt;
+    -fx-text-fill: white;
+}
+
+.text-area:focused {
+    -fx-border-color: #4a90e2;
+} 

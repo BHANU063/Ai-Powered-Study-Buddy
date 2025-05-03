@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studybuddy.controller.MainController">
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="New User" onAction="#handleNewUser" />
+            <MenuItem text="Login" onAction="#handleLogin" />
+            <MenuItem text="Name Your Buddy" onAction="#handleNameBuddy" />
+            <SeparatorMenuItem />
+            <MenuItem text="Exit" onAction="#handleExit" />
+        </Menu>
+        <Menu text="View">
+            <MenuItem text="Light Theme" onAction="#handleLightTheme" />
+            <MenuItem text="Dark Theme" onAction="#handleDarkTheme" />
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="About" onAction="#handleAbout" />
+        </Menu>
+    </MenuBar>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Label fx:id="buddyNameLabel" styleClass="buddy-name" />
+        <Label fx:id="statusLabel" styleClass="status-label" />
+    </HBox>
+
+    <TabPane fx:id="mainTabPane">
+        <Tab text="Notes">
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <HBox spacing="10">
+                    <Button text="New Note" onAction="#handleNewNote" />
+                    <Button text="Upload File" onAction="#handleUploadFile" />
+                    <TextField fx:id="searchField" promptText="Search notes..." />
+                    <Button text="Search" onAction="#handleSearchNotes" />
+                </HBox>
+                <ListView fx:id="notesListView" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </Tab>
+
+        <Tab text="Flashcards">
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <HBox spacing="10">
+                    <Button text="New Flashcard" onAction="#handleNewFlashcard" />
+                    <Button text="Start Review" onAction="#handleStartReview" />
+                    <Button fx:id="quizButton" text="Start Quiz" onAction="#handleStartQuiz" />
+                </HBox>
+                <ListView fx:id="flashcardsListView" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </Tab>
+
+        <Tab text="To-Do List">
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <HBox spacing="10">
+                    <Button text="New Task" onAction="#handleNewTask" />
+                    <Button text="Show Completed" onAction="#handleShowCompleted" />
+                    <Button text="Show Pending" onAction="#handleShowPending" />
+                </HBox>
+                <ListView fx:id="todoListView" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </Tab>
+
+        <Tab text="Timer">
+            <VBox spacing="20" alignment="CENTER">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label fx:id="timerLabel" styleClass="timer-label" text="00:00" />
+                <HBox spacing="10" alignment="CENTER">
+                    <TextField fx:id="timerDuration" promptText="Minutes" prefWidth="100" />
+                    <Button fx:id="startTimerButton" text="Start Timer" onAction="#handleStartTimer" />
+                    <Button fx:id="stopTimerButton" text="Stop Timer" onAction="#handleStopTimer" />
+                </HBox>
+            </VBox>
+        </Tab>
+
+        <Tab text="Games">
+            <VBox spacing="20" alignment="CENTER">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Button fx:id="gameButton" text="Start Study Game" onAction="#handleStartGame" />
+                <Label text="Coming soon: Interactive games to make studying fun!" 
+                       styleClass="game-description" 
+                       wrapText="true" />
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox> 

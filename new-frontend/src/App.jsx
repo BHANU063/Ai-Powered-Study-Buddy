@@ -16,6 +16,7 @@ import History from './components/History';
 import Games from './components/Games';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import ParticleBackground from './components/ParticleBackground';
+import AIAgentFloatingButton from './components/AIAgentFloatingButton';
 import './styles/animations.css';
 
 // Context for global state (buddy name)
@@ -93,6 +94,7 @@ function AppContent() {
             </div>
           </div>
         </div>
+        <AIAgentFloatingButton />
       </Router>
     </AppContext.Provider>
   );
